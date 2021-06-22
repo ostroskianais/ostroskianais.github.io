@@ -1,0 +1,47 @@
+/* Color Palette
+"Melon":"ffb5a7",
+"Misty Rose":"fdded8",
+"Isabelline":"f8edeb",
+"Peach Puff":"f9dcc4",
+"Rich Black FOGRA 39":"0b090a"
+
+font-family: 'Cormorant Garamond', serif;
+font-family: 'Tenor Sans', sans-serif;
+*/
+
+
+/* Global styles
+------------------------------------*/
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  header {
+    background-color: #f8edeb;
+    border-style: solid;
+    border-color: #0b090a;
+    border-width: 0 0 1px 0;
+  }
+  .menu {
+      background-color: #212529;
+      height: 40px;
+  }
+  body {
+    color: #0b090a;
+    margin: 0;
+    padding: 0;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  h1, h2 {
+    font-family: 'Tenor Sans', sans-serif;
+    font-weight: 300;
+    margin: 5px;
+    height: 90px;
+    line-height: 1.0;
+    padding: 10px 10px;
+    
+  }
