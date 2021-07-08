@@ -1,9 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<script type="module">
+
+    // Load the Observable runtime and inspector.
+    import { Runtime, Inspector } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+
+    // Your notebook, compiled as an ES module.
+    import notebook from "https://api.observablehq.com/@ostroskianais/chord-dependency-diagram.js?v=3";
+
+    // Load the notebook, observing its cells with a default Inspector
+    // that simply renders the value of each cell into the provided DOM node.
+    // new Runtime().module(notebook, Inspector.into(document.body));
+
+    new Runtime().module(notebook, name => {
+        if (name === "chart") {
+            return new Inspector(document.querySelector("#chart"));
+        }
+    });
+</script>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anaís Ostroski</title>
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com"> </-->
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300&family=Tenor+Sans&display=swap"
         rel="stylesheet">
@@ -11,10 +32,38 @@
 </head>
 
 <body>
-    <div class="chart-container">
-        <iframe width="700" height="700" frameborder="0" height="1038" frameborder="0"
-            src="https://observablehq.com/embed/@ostroskianais/chord-dependency-diagram?cells=chart"></iframe>
-    </div>
+    <main>
+        <nav>
+            <ul>
+                <li class="nav_button"><a href="/">HOME</a></li>
+                <li class="nav_button"><a href="projects.html">PROJECTS</a></li>
+            </ul>
+        </nav>
+
+
+
+        <div class="chart-container">
+            <div id="chart-text">
+                <hr>
+                <p> if you are a human in this world, I bet you heard of the environmental impacts
+                    caused by meat consumption. But do you know where they happen? And how can we link
+                    the beef that we had for dinner yesterday to the real impacts happening elsewehere
+                    during production?
+                </p>
+                <br>
+                <p>
+                    We traced some of these impacts by modeling animal and meat movements around the
+                    United States. In the circular chart, you can see "virtual water" flows between States
+                    and find where and how much water was used to produce beef that was consumed
+                    during a year in a given state.
+                </p>
+            </div>
+            <div id="chart-title">
+                <h2>meat and water</h2>
+            </div>
+            <div id="chart"></div>
+        </div>
+    </main>
 </body>
 
 </html>
