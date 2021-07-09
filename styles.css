@@ -92,6 +92,10 @@ p {
   display: flex;
   background-color: #f6f4f4;
   margin-left: 5%;
+  animation: fadeInAnimation ease 5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  margin-top: 5%;
 }
 #chart {
   width: 50%;
@@ -107,7 +111,7 @@ p {
   font-size: 3vw;
   transform: rotate(-90deg);
   position: relative;
-  top: 57%;
+  top: 60%;
   left: 35%;
   padding: 0px;
 }
@@ -116,9 +120,80 @@ p {
 }
 #chart-text p {
   padding: 0 1vw;
-  font-size: 1vw;
+  font-size: 1.2vw;
   text-align: justify;
 }
 #chart-text hr {
   margin: 4vw 1vw 0 1vw;
+}
+
+/* Map */
+.map-container {
+  width: 90%;
+  height: 40%;
+  display: flex;
+  background-color: #f6f4f4;
+  margin-left: 5%;
+  animation: fadeInAnimation ease 10s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  margin: 5%;
+}
+#map {
+  width: 60%;
+  display: block;
+  margin-top: 0px;
+  margin-left: 10%;
+}
+
+/* Responsive */
+
+@media screen and (max-width: 800px) {
+  .chart-container {
+    flex-direction: column;
+  }
+  #chart-text {
+    width: 100%;
+    margin-bottom: 5vw;
+  }
+  #chart-text p {
+    font-size: 3vw;
+  }
+  #chart-title h2 {
+    font-size: 3vw;
+    transform: rotate(0deg);
+    text-align: center;
+  }
+  #chart-title {
+    width: 100%;
+  }
+  #chart-title h2 {
+    font-size: 8vw;
+    position: relative;
+    top: 0%;
+    left: 0%;
+    text-align: center;
+  }
+  #chart {
+    width: 100%;
+    margin-top: 5%;
+  }
+  .map-container {
+    flex-direction: column;
+  }
+  #map {
+    width: 90%;
+    margin: 0;
+    margin-top: 5%;
+  }
+}
+
+/* Define transition */
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
