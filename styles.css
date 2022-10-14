@@ -345,7 +345,7 @@ p {
 
 /* Responsive -------------------------------------------------------------------------------------*/
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 821px) {
   nav ul {
     list-style-type: none;
     color: #f6f4f4;
@@ -355,6 +355,7 @@ p {
     text-align: center;
     margin: auto;
     padding: 20px;
+    font-size: 16px;
   }
   .content-wrap {
     flex-direction: column;
