@@ -1,44 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<script type="module">
-
-    // Load the Observable runtime and inspector.
-    import { Runtime, Inspector } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
-
-    // Your notebook, compiled as an ES module.
-    import notebook from "https://api.observablehq.com/@ostroskianais/chord-dependency-diagram.js?v=3";
-
-    // Load the notebook, observing its cells with a default Inspector
-    // that simply renders the value of each cell into the provided DOM node.
-    // new Runtime().module(notebook, Inspector.into(document.body));
-
-    new Runtime().module(notebook, name => {
-        if (name === "chart") {
-            return new Inspector(document.querySelector("#chart"));
-        }
-    });
-</script>
-
-<script type="module">
-
-    // Load the Observable runtime and inspector.
-    import { Runtime, Inspector } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
-
-    // Your notebook, compiled as an ES module.
-    import notebook from "https://api.observablehq.com/@ostroskianais/bivariate-choropleth.js?v=3";
-
-    // Load the notebook, observing its cells with a default Inspector
-    // that simply renders the value of each cell into the provided DOM node.
-    // new Runtime().module(notebook, Inspector.into(document.body));
-
-    new Runtime().module(notebook, name => {
-        if (name === "map") {
-            return new Inspector(document.querySelector("#map"));
-        }
-    });
-</script>
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -48,58 +10,174 @@
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300&family=Tenor+Sans&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <script defer src="script.js"></script>
 </head>
 
-<body id="projects">
+<nav>
+    <ul>
+        <li class="nav_button"><a href="/">HOME</a></li>
+        <li class="nav_button"><a href="about.html">ABOUT</a></li>
+        <li class="nav_button"><a href="projects.html#story">PORTFOLIO</a></li>
+    </ul>
+</nav>
+<header>
+    <div class="name">
+        <h1>ANAÍS <br> OSTROSKI</h1>
+    </div>
+</header>
+
+<body id="portfolio">
     <main>
-        <nav>
-            <ul>
-                <li class="nav_button"><a href="/">HOME</a></li>
-                <li class="nav_button"><a href="projects.html">PROJECTS</a></li>
-            </ul>
-        </nav>
+        <div class="wrapper" id="story">
+            <!-- One -->
+            <section
+                class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
+                <div class="content">
+                    <h2>Research projects</h2>
+                    <p> I study agricultural systems to understand the relationship between food production and
+                        the environment at different scales</p>
+                    <ul class="actions stacked">
+                        <li><a href="#first" class="button big wide smooth-scroll-middle">Get Started</a></li>
+                    </ul>
+                </div>
+                <div class="image">
+                    <img src="images/stock/red-zeppelin-GNhlIrxu1h0-unsplash.jpg" alt="" />
+                </div>
+            </section>
 
-        <div class="chart-container">
-            <div id="chart-text">
-                <hr>
-                <p> if you are a human in this world, I bet you heard of the environmental impacts
-                    caused by meat consumption. But do you know where they happen? And how can we link
-                    the beef that we had for dinner yesterday to the real impacts happening elsewehere
-                    during production?
-                </p>
-                <br>
-                <p>
-                    We traced some of these impacts by modeling animal and meat movements around the
-                    United States. In the circular chart, you can see <i>virtual water</i> flows between States
-                    and find where and how much water was used to produce beef that was consumed
-                    during a year in a given state.
-                </p>
-            </div>
-            <div id="chart-title">
-                <h2>meat and water</h2>
-            </div>
-            <div id="chart"></div>
+            <!-- Two -->
+            <section
+                class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in"
+                id="first">
+                <div class="content">
+                    <h2>Beef and environmental impacts: water (part 1)</h2>
+                    <p>We traced beef supply chains in the United States at the county level
+                        from ranch -> feedlot -> processing -> consumption based on an optimization
+                        framework to minimize transporation costs. We then calculated the associated
+                        "virtual water" to compare environmental impacts from the point of view of
+                        production and consumption.</p>
+                    <ul class="actions stacked">
+                        <li><a href="vw.html" class="button">Learn More</a></li>
+                    </ul>
+                </div>
+                <div class="image">
+                    <img src="images/stock/filip-bunkens-phKv_fo-9HM-unsplash.jpg" alt="" />
+                </div>
+            </section>
+
+            <!-- Three -->
+            <section
+                class="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in">
+                <div class="content">
+                    <h2>Beef and environmental impacts: nitrogen (part 2)</h2>
+                    <p> We expanded the beef supply chain to include feed movements and calculated
+                        nitrogen budgets at every step. We obtained a network of nitrogen
+                        retained and nitrogen released. As nitrogen is one of the most important
+                        environmental impacts caused by beef consumption, people can use our network
+                        to check the counties where nitrogen was lost associated with beef consumption in
+                        their home counties. </p>
+
+                    <p>
+
+                        The photo was taken from Google Earth and shows a cattle feedlot. These
+                        animal operations can be massive, and the animals look microscopic from above. It is possible
+                        that the green parts in the lagoon are algae blooms due to the high concentration of nutrients
+                        (nitrogen and phosphorus).
+                    </p>
+                    <ul class="actions stacked">
+                        <li><a href="N.html" class="button">Learn More</a></li>
+                    </ul>
+                </div>
+                <div class="image">
+                    <img src="images/google-earth/google-earth-tascosafeedyard-4.jpg">
+                </div>
+            </section>
+
+            <!-- Four -->
+            <section
+                class=" spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in">
+                <div class="content">
+                    <h2>Yield estimation</h2>
+                    <p>Using remote sensing and other spatial datasets, I build a machine learning model to
+                        estimate yields at 250m scale in almond fields in California.
+                    </p>
+                    <ul class="actions stacked">
+                        <li><a href="yield.html" class="button">Learn More</a></li>
+                    </ul>
+                </div>
+                <div class="image">
+                    <img src="images/stock/ryan-searle-7Ku54ZgKEcs-unsplash.jpg" alt="" />
+                </div>
+            </section>
+
+
+
         </div>
 
-        <div class="map-container">
-            <div id="chart-text">
-                <hr>
-                <p> but can you be more specific? in this <i>bivariate map</i>,
-                    you can see the correlation between production andconsumption at the county-level.
-                </p>
-                <br>
-                <p>
-                    Note how the east coast generally has high values for consumption and low values
-                    for production (bright red). Meanwhile, the counties colored as turquoise are
-                    responsible for the majority of the production while consuming very little.
-                    States in the west also have a higher number of counties that are both intense
-                    producers and consumers (brown colors).
-                </p>
+
+        <!-- <div class="row">
+                <div class="column">
+                    <a target="_self" href="vw.html">
+                        <img src="images/stock/pexels-tyler-lastovich-850674.jpeg" alt="Beef virtual water project link"
+                            width="100%" height="300px">
+                    </a>
+                </div>
+                <div class="column">
+                    <h2>Beef and environmental impacts: water (part 1)</h2>
+                    <p> We traced beef supply chains in the United States at the county level
+                        from ranch -> feedlot -> processing -> consumption based on an optimization
+                        framework to minimize transporation costs. We then calculated the associated
+                        "virtual water" to compare environmental impacts from the point of view of
+                        production and consumption.
+                    </p>
+                </div>
             </div>
-            <div id="map"></div>
+            <div class="row">
+                <div class="column">
+                    <h2>Beef and environmental impacts: nitrogen (part 2)</h2>
+                    <p> We expanded the beef supply chain to include feed movements and calculated
+                        nitrogen budgets at every step. We obtained a network of nitrogen
+                        retained and nitrogen released. As nitrogen is one of the most important
+                        environmental impacts caused by beef consumption, people can use our network
+                        to check the counties where nitrogen was lost associated with beef consumption in
+                        their home counties.
+                    </p>
+                </div>
+                <div class="column">
+                    <a target="_self" href="N.html">
+                        <img src="images/stock/pexels-akin-akdag-4527221.jpeg" alt="Beef nitrogen project link"
+                            width="100%" height="300px">
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column">
+                    <a target="_self" href="yield.html">
+                        <img src="images/stock/meredith-petrick-TCcA-nibnCc-unsplash.jpeg" alt="Yield estimation"
+                            width="100%" height="100%">
+                    </a>
+                </div>
+                <div class="column">
+                    <h2>Yield estimation</h2>
+                    <p>Using remote sensing and other spatial datasets, I build a machine learning model to
+                        estimate yields at 250m scale in almond fields in California.
+                    </p>
+                </div>
+            </div>
         </div>
+    -->
         <footer>
+            <div class="footer-col">
+                <h2>Contact</h2>
+                <div class="social-links">
+                    <a href="https://twitter.com/OstroskiAnais"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/in/anais-ostroski/"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/ostroskianais"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
         </footer>
     </main>
 </body>

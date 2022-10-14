@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<script type="module">
+
+    // Load the Observable runtime and inspector.
+    import { Runtime, Inspector } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+
+    // Your notebook, compiled as an ES module.
+    import notebook from "https://api.observablehq.com/@ostroskianais/choropleth-of-network.js?v=3";
+
+    // Load the notebook, observing its cells with a default Inspector
+    // that simply renders the value of each cell into the provided DOM node.
+    // new Runtime().module(notebook, Inspector.into(document.body));
+
+    new Runtime().module(notebook, name => {
+        if (name === "n_map") {
+            return new Inspector(document.querySelector("#chart"));
+        }
+        if (name === "select_county") {
+            return new Inspector(document.querySelector("#observablehq-viewof-selectedCounty-4c2376a0"));
+        }
+    });
+</script>
+
+<script type="module">
+
+    // Load the Observable runtime and inspector.
+    import { Runtime, Inspector } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+
+    // Your notebook, compiled as an ES module.
+    import notebook from "https://api.observablehq.com/@ostroskianais/bivariate-choropleth.js?v=3";
+
+    // Load the notebook, observing its cells with a default Inspector
+    // that simply renders the value of each cell into the provided DOM node.
+    // new Runtime().module(notebook, Inspector.into(document.body));
+
+    new Runtime().module(notebook, name => {
+        if (name === "map") {
+            return new Inspector(document.querySelector("#map"));
+        }
+    });
+</script>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anaís Ostroski</title>
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com"> </-->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300&family=Tenor+Sans&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+
+<body id="nitrogen">
+    <main>
+        <nav>
+            <ul>
+                <li class="nav_button"><a href="/">HOME</a></li>
+                <li class="nav_button"><a href="about.html">ABOUT</a></li>
+                <li class="nav_button"><a href="projects.html#story">PORTFOLIO</a></li>
+            </ul>
+        </nav>
+        <div class="chart-container">
+            <div id="chart-text">
+                <hr>
+                <p> have you ever heard of <i>nitrogen polution</i>?
+                </p>
+                <br>
+                <p>
+                    Nitrogen is essential for life on Earth and it is vastly abundant in the form of dinitrogen
+                    (N<sub>2</sub>).
+                    Most
+                    organisms
+                    need a <i>reactive form</i> of nitrogen to sustain life. The Harber-Bosh process to convert
+                    dinitrogen
+                    into ammonia
+                    (NH<sub>3</sub>) changed the form we produce food for the best because we can produce large
+                    quantities and
+                    sustain
+                    a growing
+                    population. But excess nitrogen can have many effects
+                    on
+                    the environment
+                    including impacts on human health,
+                    on aquatic systems,
+                    reduction of biodiversity,
+                    and climate change.
+                </p>
+                <br>
+
+            </div>
+            <div id="chart-text2">
+                <p>
+                    Nitrogen is released during every stage in beef production: from fertilizer use during feed
+                    production,
+                    animal excretion, and wastewater in processing plants.
+                    In the map, you can see <i>where</i> that may happen relative to where the beef is consumed. <b> The
+                        values
+                        are quantiles and refer
+                        to all nitrogen released to the environment associated with one-year worth of beef consumption
+                        in a
+                        given county</b>. Note that this
+                    is a model that assumes companies and farmers are operating to minimize their costs, and may not
+                    reflect
+                    real links. Nonetheless,
+                    it is a great way to see how far away the pollution is.
+                </p>
+            </div>
+            <div id="chart">
+                <iframe width="100%" height="600" frameborder="0"
+                    src="https://observablehq.com/embed/@ostroskianais/choropleth-of-network?cells=chart%2Cviewof+selectedCounty"></iframe>
+
+                <!-- <div id="n_map"></div> -->
+            </div>
+        </div>
+        <footer>
+            <div class="footer-col">
+                <h2>Contact</h2>
+                <div class="social-links">
+                    <a href="https://twitter.com/OstroskiAnais"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/in/anais-ostroski/"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/ostroskianais"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </footer>
+    </main>
+</body>
+
+</html>

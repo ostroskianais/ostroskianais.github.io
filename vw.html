@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<script type="module">
+
+    // Load the Observable runtime and inspector.
+    import { Runtime, Inspector } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+
+    // Your notebook, compiled as an ES module.
+    import notebook from "https://api.observablehq.com/@ostroskianais/chord-dependency-diagram.js?v=3";
+
+    // Load the notebook, observing its cells with a default Inspector
+    // that simply renders the value of each cell into the provided DOM node.
+    // new Runtime().module(notebook, Inspector.into(document.body));
+
+    new Runtime().module(notebook, name => {
+        if (name === "chart") {
+            return new Inspector(document.querySelector("#chart"));
+        }
+    });
+</script>
+
+<script type="module">
+
+    // Load the Observable runtime and inspector.
+    import { Runtime, Inspector } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+
+    // Your notebook, compiled as an ES module.
+    import notebook from "https://api.observablehq.com/@ostroskianais/bivariate-choropleth.js?v=3";
+
+    // Load the notebook, observing its cells with a default Inspector
+    // that simply renders the value of each cell into the provided DOM node.
+    // new Runtime().module(notebook, Inspector.into(document.body));
+
+    new Runtime().module(notebook, name => {
+        if (name === "map") {
+            return new Inspector(document.querySelector("#map"));
+        }
+    });
+</script>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anaís Ostroski</title>
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com"> </-->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300&family=Tenor+Sans&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+
+<body id="projects">
+    <main>
+        <nav>
+            <ul>
+                <li class="nav_button"><a href="/">HOME</a></li>
+                <li class="nav_button"><a href="about.html">ABOUT</a></li>
+                <li class="nav_button"><a href="projects.html#story">PORTFOLIO</a></li>
+            </ul>
+        </nav>
+        <div class="chart-container">
+            <div id="chart-text">
+                <hr>
+                <p> if you are a human in this world, I bet you heard of the environmental impacts
+                    caused by meat consumption. But do you know where they happen? And how can we link
+                    the beef that we had for dinner yesterday to the real impacts happening elsewehere
+                    during production?
+                </p>
+                <br>
+                <p>
+                    We traced some of these impacts by modeling animal and meat movements around the
+                    United States. In the circular chart, you can see <i>virtual water</i> flows between States
+                    and find where and how much water was used to produce beef that was consumed
+                    during a year in a given state.
+                </p>
+            </div>
+            <div id="chart-title">
+                <h2>meat and water</h2>
+            </div>
+            <div id="chart"></div>
+        </div>
+        <div class="map-container">
+            <div id="chart-text">
+                <hr>
+                <p> but can you be more specific? in this <i>bivariate map</i>,
+                    you can see the correlation between production andconsumption at the county-level.
+                </p>
+                <br>
+                <p>
+                    Note how the east coast generally has high values for consumption and low values
+                    for production (bright red). Meanwhile, the counties colored as turquoise are
+                    responsible for the majority of the production while consuming very little.
+                    States in the west also have a higher number of counties that are both intense
+                    producers and consumers (brown colors).
+                </p>
+            </div>
+            <div id="map"></div>
+        </div>
+        <div class="chart-container">
+            <div id="chart-text">
+                <hr>
+                <p>
+                    For the complete methodology, please check out <u>our paper published at ES&T</u>!
+                    We used data on beef consumption, location and capacity of meat processing plants,
+                    and cattle sales at the county-level, and developed optimization models to link
+                    stages and cut purchasing and transportation costs.
+                </p>
+            </div>
+        </div>
+        <footer>
+            <div class="footer-col">
+                <h2>Contact</h2>
+                <div class="social-links">
+                    <a href="https://twitter.com/OstroskiAnais"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/in/anais-ostroski/"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/ostroskianais"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </footer>
+    </main>
+</body>
+
+</html>
