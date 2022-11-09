@@ -30,6 +30,8 @@ header {
 }
 header h1 {
   margin: 0 5% 0 5%;
+  padding: 10px 10px;
+  font-family: "Tenor Sans", sans-serif;
 }
 nav {
   background-color: #212529;
@@ -38,7 +40,8 @@ nav {
 nav ul {
   list-style-type: none;
   color: #f6f4f4;
-  font-family: "Tenor Sans", sans-serif;
+  font-family: 'Raleway', sans-serif;
+  /* font-family: "Tenor Sans", sans-serif; */
   text-decoration: none;
   vertical-align: middle;
   text-align: right;
@@ -128,16 +131,17 @@ body {
 }
 h1,
 h2 {
-  font-family: "Tenor Sans", sans-serif;
+  font-family: "Raleway", sans-serif;
   font-weight: 300;
   margin: 0px;
   line-height: 1;
-  padding: 10px 10px;
   vertical-align: middle;
   text-align: left;
 }
 p {
   margin: 0;
+  font-size: 20px;
+  text-align: justify;
 }
 
 /* Home and About pages --------------------------------------------------------------------------------*/
@@ -148,6 +152,8 @@ p {
   background-color: #f6f4f4;
   margin-left: 5%;
   margin-bottom: 5%;
+  border-color: #212529;
+  border-width: 0 0 1px 0;
 }
 #woman {
   width: 50%;
@@ -158,6 +164,11 @@ p {
 #about .intro {
   width: 50%;
 }
+
+.about-img {
+  width: 100%;
+}
+
 #about .intro h1 {
   text-align: center;
   margin-top: 10%;
@@ -194,8 +205,7 @@ p {
   position: relative;
   top: 45%;
   /* left: 30%; */
-  font-family: "Tenor Sans", sans-serif;
-  font-size: 2vw;
+  /* font-size: 2vw; */
   /* -webkit-animation: slideLeft 2s forwards, fadeInAnimation ease 4s;
   -moz-animation: slideLeft 2s forwards, fadeInAnimation ease 4s;
   animation: slideLeft 2s forwards, fadeInAnimation ease 4s; */
@@ -218,50 +228,37 @@ p {
   text-align: right;
 }
 
-/* Portfolio landing page ------------------------------------------------------------------------------*/ 
-#portfolio .gallery{
-  display: block;
-  /* position: relative; */
-  /* align-items: center; */
-  width: 50%;
-  /* margin-left: 15%;
-  margin-right: 15%; */
-}
-
-#portfolio .column img:hover{
-  opacity: 0.3;
-}
-
-#portfolio .column p{
-  text-align: justify;
-  font-size: 1.1vw;
-}
-
-#portfolio .column h2{
-  text-align: center;
-}
-
-#portfolio .gallery-item{
-  width: 33%;
-  float: left;
-}
-
-#portfolio .caption .gallery-item:hover {
-  opacity: 1;
-} 
-
-#portolio .gallery img{
-  object-fit: cover;
-} 
-
+/* New landing page ------------------------------------------------------------------------------*/ 
 .row {
   display: flex;
-  padding: 20px;
+  padding: 0px;
+  border-style: solid;
+  border-color: #212529;
+  border-width: 0 0 1px 0;
 }
 
 .column {
   flex: 50%;
-  padding: 5px;
+  padding: 50px;
+}
+
+#home .columnleft {
+  border-style: solid;
+  border-color: #212529;
+  border-width: 0 1px 0px 0;
+}
+
+#land {
+  height: 45vw;
+}
+
+#land .columnleft {
+  border-width: 0;
+  padding: 0;
+}
+
+#home p h1 {
+  margin: 20px;
 }
 
 /* Project page (virtual water)*/
@@ -288,7 +285,7 @@ p {
   animation-fill-mode: both;
 }
 #chart-title {
-  font-family: "Tenor Sans", sans-serif;
+  font-family: "Raleway", sans-serif;
   display: block;
   width: 25%;
 }
@@ -349,7 +346,7 @@ p {
   nav ul {
     list-style-type: none;
     color: #f6f4f4;
-    font-family: "Tenor Sans", sans-serif;
+    font-family: "Raleway", sans-serif;
     text-decoration: none;
     vertical-align: middle;
     text-align: center;
@@ -357,9 +354,23 @@ p {
     padding: 20px;
     font-size: 16px;
   }
-  .content-wrap {
+  #land {
+    height: auto;
+  }
+  .row {
     flex-direction: column;
     align-items: center;
+    height: auto;
+  }
+  #home .columnleft {
+    border-style: solid;
+    border-color: #212529;
+    border-width: 0 0px 0px 0;
+  }
+  .content-wrap {
+    /* flex-direction: column;
+    align-items: center; */
+    display: block;
   }
   #woman {
     width: 100%;
