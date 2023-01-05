@@ -144,6 +144,11 @@ p {
   text-align: justify;
 }
 
+.me {
+  margin: 0px;
+  padding: 0px
+}
+
 /* Home and About pages --------------------------------------------------------------------------------*/
 .content-wrap {
   width: 90%;
