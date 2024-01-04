@@ -12,6 +12,11 @@ font-family: 'Tenor Sans', sans-serif;
 
 /* Global styles
 -------------------------------------------------------------------------------------------------------*/
+@font-face {
+  font-family: Gallient;
+  src: url(font/gallient/Gallient.ttf);
+}
+
 html {
   box-sizing: border-box;
 }
@@ -205,8 +210,10 @@ p {
   left: 35%; */
 }
 #home .intro h1 {
+  font-family: Gallient;
+  font-size: 6vw;
   text-align: right;
-  margin-top: 10%;
+  margin-top: 5%;
   position: relative;
   top: 45%;
   /* left: 30%; */
@@ -406,6 +413,7 @@ p {
     text-align: center;
     margin-top: 2%;
     font-size: 20px;
+    font-family: Gallient;
   }
   #about .intro {
     width: 100%;
