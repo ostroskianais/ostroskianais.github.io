@@ -211,11 +211,11 @@ p {
 }
 #home .intro h1 {
   font-family: Gallient;
-  font-size: 6vw;
-  text-align: right;
-  margin-top: 5%;
+  font-size: 3vw;
+  text-align: left;
+  margin-top: 1%;
   position: relative;
-  top: 45%;
+  top: 5%;
   /* left: 30%; */
   /* font-size: 2vw; */
   /* -webkit-animation: slideLeft 2s forwards, fadeInAnimation ease 4s;
@@ -224,7 +224,7 @@ p {
 }
 #home .intro p {
   width: 70%;
-  top: 45%;
+  top: 5%;
   left: 30%;
   position: relative;
   margin: 0;
@@ -234,7 +234,7 @@ p {
 }
 #home .intro hr {
   width: 70%;
-  top: 45%;
+  top: 5%;
   left: 15%;
   position: relative;
   text-align: right;
@@ -252,6 +252,28 @@ p {
 .column {
   flex: 50%;
   padding: 50px;
+}
+
+.columncenter {
+  margin-top: 2%;
+  margin-bottom: 2%;
+  flex: 1;
+  margin-left: 20%;
+  margin-right: 20%;
+  /* place-items: center; */
+  text-align: left;
+}
+
+.columnleft {
+  margin-left: 5%;
+}
+.columnright {
+  margin-right: 5%;
+}
+
+.me {
+  display: grid;
+  place-items: center;
 }
 
 #home .columnleft {
